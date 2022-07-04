@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Choose your plant and buy it!">
+    <link rel="stylesheet" href="./style.css" media="print" onload="this.media='all'">
+    <title>Plant</title>
+    <style>
+        /* latin-ext */
+        @font-face {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v11/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v11/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        /* latin-ext */
+        @font-face {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v11/rP2Cp2ywxg089UriAWCrCBamC2QX.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v11/rP2Cp2ywxg089UriAWCrCBimCw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        /* latin-ext */
+        @font-face {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v11/rP2Cp2ywxg089UriASitCBamC2QX.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/dmsans/v11/rP2Cp2ywxg089UriASitCBimCw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        /* cyrillic-ext */
+        @font-face {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/nunito/v24/XRXV3I6Li01BKofIOOaBXso.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+        /* cyrillic */
+        @font-face {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/nunito/v24/XRXV3I6Li01BKofIMeaBXso.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+        /* vietnamese */
+        @font-face {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/nunito/v24/XRXV3I6Li01BKofIOuaBXso.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+        /* latin-ext */
+        @font-face {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/nunito/v24/XRXV3I6Li01BKofIO-aBXso.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/nunito/v24/XRXV3I6Li01BKofINeaB.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        /* cyrillic-ext */
+        @font-face {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/nunito/v24/XRXV3I6Li01BKofIOOaBXso.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+        /* cyrillic */
+        @font-face {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/nunito/v24/XRXV3I6Li01BKofIMeaBXso.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+        /* vietnamese */
+        @font-face {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/nunito/v24/XRXV3I6Li01BKofIOuaBXso.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+        /* latin-ext */
+        @font-face {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/nunito/v24/XRXV3I6Li01BKofIO-aBXso.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/nunito/v24/XRXV3I6Li01BKofINeaB.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+        :root {
+            --main-color: #066F14;
+            --second-color: #066F14B2;
+        }
+        .container {
+            max-width: 1152px;
+            margin: 0 auto;
+        }
+        .align {
+            display: flex;
+            justify-content: space-between;
+        }
+        .title {
+            font-family: 'Nunito';
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 50px;
+            color: #001B04;
+        }
+        .title-small {
+            font-family: 'Nunito';
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 49px;
+            color: #1A1A1A;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            width: 100%;
+            height: 42px;
+        }
+        .name {
+            color: #1A1A1A;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 33px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 461px;
+        }
+        .navigation>li>a {
+            color: #1A1A1A;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 21px;
+        }
+        .navigation>li>a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            background-color: var(--main-color);
+            cursor: pointer;
+            transition: .2s;
+        }
+        .btn:hover {
+            background-color: #065711;
+        }
+        .btn-small {
+            padding: 12px 16px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+        }
+        .btn-big {
+            padding: 16px 32px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 23px;
+        }
+        .singup {
+            margin-left: 48px;
+        }
+        .hero {
+            margin-top: 44px;
+        }
+        .hero__content {
+            position: relative;
+            margin-top: 52px;
+            max-width: 548px;
+        }
+        .title-main {
+            color: #1A1A1A;
+            font-family: 'Nunito';
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 92px;
+        }
+        .article {
+            color: #4A4A4A;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+        }
+        .hero__text {
+            margin: 24px 0 40px 0;
+        }
+        .hero__info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 60px;
+        }
+        .hero__info>li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .number {
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 23px;
+            color: #1A1A1A;
+        }
+        .hero__leaves {
+            position: absolute;
+            left: 84%;
+            top: 45%;
+        }
+        .hero__illustration {
+            position: relative;
+            height: 719px;
+            width: 480px;
+        }
+        .hero-plant {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .plant-info-list {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .plant-info {
+            position: absolute;
+            padding: 16px 32px;
+            border-radius: 4px;
+            background-color: var(--second-color);
+            color: #fff;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 21px;
+        }
+        .plant-info::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            height: 4px;
+            background-color: var(--second-color);
+            transform: translateY(-50%);
+        }
+        .plant-info::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #F4C300;
+            border: 5px solid rgba(255, 255, 255, 0.699);
+            transform: translateY(-50%);
+        }
+        .plant-info:nth-child(1) {
+            width: 100px;
+            top: 10%;
+            left: 93%;
+        }
+        .plant-info:nth-child(1)::before {
+            width: 115px;
+        }
+        .plant-info:nth-child(1)::after {
+            right: 165%;
+        }
+        .plant-info:nth-child(2) {
+            top: 24.5%;
+            left: -9%;
+        }
+        .plant-info:nth-child(2)::before {
+            width: 95px;
+            left: 100%;
+        }
+        .plant-info:nth-child(2)::after {
+            left: 160%;
+        }
+        .plant-info:nth-child(3) {
+            width: 87px;
+            top: 78%;
+            left: 93%;
+        }
+        .plant-info:nth-child(3)::before {
+            width: 72px;
+        }
+        .plant-info:nth-child(3)::after {
+            right: 145%;
+        }
+
+
+
+        .collection {
+            margin-top: 80px;
+        }
+        .title-collection {
+            margin-bottom: 37px;
+        }
+        .plants {
+            display: flex;
+        }
+        .plants-wrapper {
+            padding: 22px 28px;
+            margin-left: 24px;
+            background-color: #F6EDE8;
+        }
+        .plants-wrapper:nth-child(1) {
+            padding: 22px 21px;
+            margin-left: 62px;
+        }
+        .plants-wrapper:nth-child(2) {
+            background-color: #F0F1F6;
+        }
+    </style>
+</head>
+<body>
+    <header class="container header">
+        <a href="/" class="name">Plant</a>
+        <nav>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="autorization">
+            <a href="#" class="login">Log In</a>
+            <button class="btn btn-small singup">Sing Up</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="align hero">
+            <section class="hero__content">
+                <h1 class="title-main">Growing Beautiful Plants at Home</h1>
+                <p class="article hero__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu, tempor, accumsan sit amet nunc cursus. Nec tristique at in erat lectus mas sa diam. Lectus elit, nulla elementum fringilla at.</p>
+                <button class="btn btn-big">Learn More</button>
+                <ul class="hero__info">
+                    <li>
+                        <span class="title-small number">2000+</span>
+                        <span class="subtitle">Delivery</span>
+                    </li>
+                    <li>
+                        <span class="title-small number">1200+</span>
+                        <span class="subtitle">Customers</span>
+                    </li>
+                    <li>
+                        <span class="title-small number">1000+</span>
+                        <span class="subtitle">Product</span>
+                    </li>
+                </ul>
+                <img src="./img/hero2.png" alt="Leaves" class="hero__leaves">
+            </section>
+            <section class="hero__illustration">
+                <img src="./img/hero1.png" alt="plant" class="hero-plant">
+                <div class="plant-info-list">
+                    <span class="plant-info">Cactus Thorn</span>
+                    <span class="plant-info">Cactus stem</span>
+                    <span class="plant-info">Plant Media</span>
+                </div>
+            </section>
+        </article>
+
+        <article class="align collection">
+            <section class="block">
+                <h2 class="title-small title-collection">We have lots of plants collection for you and your family</h2>
+                <a href="#">See all collection</a>
+            </section>
+            <section class="plants">
+                <div class="plants-wrapper">
+                    <img src="./img/collection1.png" alt="plant">
+                </div>
+                <div class="plants-wrapper">
+                    <img src="./img/collection2.png" alt="plant">
+                </div>
+                <div class="plants-wrapper">
+                    <img src="./img/collection3.png" alt="plant">
+                </div>
+            </section>
+        </article>
+
+        <article class="align more-info">
+            <section class="more-info-illustration">
+                <div class="more-info-img-wrapper">
+                    <img src="./img/bansai.jpg" alt="banzai" class="more-info-img">
+                </div>
+            </section>
+            <section class="more-info-content">
+                <span class="mini-title">About Us</span>
+                <h2 class="title more-info-title">Continue to Develop to Became Global Company</h2>
+                <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu, tempor, accumsan sit amet nunc cursus. Nec tristique at in erat lectus mas sa diam. Lectus elit, nulla elementum fringilla at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu, tempor, accumsan sit amet nunc cursus. Nec tristique at in erat lectus mas sa diam. Lectus elit, nulla elementum fringilla at.</p>
+                <p class="article-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu, tempor, accumsan sit amet nunc cursus. </p>
+                <button class="btn btn-big">Read More</button>
+            </section>
+        </article>
+        
+        <article class="best-products">
+            <h2 class="title">Our Best Product</h2>
+            <ul class="categories">
+                <li class="mini-title"><a href="#">New Plants</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Sale</a></li>
+            </ul>
+            <ul class="products">
+                <li class="product">
+                    <div class="img-wrapper">
+                        <img src="./img/products1.png" alt="plant" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="plant-name">Outdoor Plant</h3>
+                        <ul class="rating">
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                        </ul>
+                        <span class="price">$50.00</span>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="img-wrapper">
+                        <img src="./img/products2.png" alt="plant" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="plant-name">Monstera Plant</h3>
+                        <ul class="rating">
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                        </ul>
+                        <span class="price">$50.00</span>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="img-wrapper">
+                        <img src="./img/products3.png" alt="plant" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="plant-name">Pottel Plant</h3>
+                        <ul class="rating">
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                        </ul>
+                        <span class="price">$50.00</span>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="img-wrapper">
+                        <img src="./img/products4.png" alt="plant" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="plant-name">Indoor Plant</h3>
+                        <ul class="rating">
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                            <li><img src="./icons/star.svg" alt="star" class="star"></li>
+                        </ul>
+                        <span class="price">$50.00</span>
+                    </div>
+                </li>
+            </ul>
+            <button class="btn btn-big">View All</button>
+        </article>
+
+        <article class="align comment">
+            <section class="comment">
+                <h2 class="title comment-tite">What Our Customers Says</h2>
+                <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu, tempor, accumsan sit amet nunc cursus. Nec tristique at in erat lectus mas sa diam. Lectus elit, nulla elementum fringilla at.</p>
+                <div class="comment-wrapper">
+                    <div class="comment-row">
+                        <img src="./img/human1.jpg" alt="Hasanul Islam" class="human">
+                        <div class="descr">
+                            <h3 class="human-name">Hasanul Islam</h3>
+                            <span class="human-position">Marketing CEO</span>
+                        </div>
+                        <img src="./icons/marks.svg" alt="marks" class="marks">
+                    </div>
+                    <p class="article comment-row">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu, tempor, accumsan sit amet nunc cursus. Nec tristique at in erat lectus mas sa diam. Lectus elit, nulla elementum fringilla at.
+                    </p>
+                </div>
+            </section>
+            <section class="human-img-wrapper">
+                <img src="./img/human2.jpg" alt="human">
+            </section>
+        </article>
+
+        <article class="subscribe-wrapper">
+            <div class="news">
+                <h2 class="title">Subscribe Our Newsletter</h2>
+                <p class="article article-news">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu, at tempor, accumsan sit amet nunc cursus.</p>
+                <input class="news-input" type="text" required placeholder="Enter mail...">
+                <button class="btn btn-small btn-news" type="submit">Subscribe</button>
+            </div>
+            <img src="./img/subscribe.png" alt="plant" class="news-plant">
+        </article>
+
+        <article class="instagram">
+            <h2 class="title-big">Follow Us on Instagram</h2>
+            <p class="article article-insta">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu, tempor, accu msan sit amet nunc cursus. Nec tristique at in erat lectus</p>
+            <ul class="posts">
+                <li class="post">
+                    <img src="./img/insta1.jpg" alt="plant">
+                    <div class="inst-wrapper">
+                        <img src="./icons/Instagram.svg" alt="instagram">
+                    </div>
+                </li>
+                <li class="post">
+                    <img src="./img/insta2.jpg" alt="plant">
+                    <div class="inst-wrapper">
+                        <img src="./icons/Instagram.svg" alt="instagram">
+                    </div>
+                </li>
+                <li class="post">
+                    <img src="./img/insta3.jpg" alt="plant">
+                    <div class="inst-wrapper">
+                        <img src="./icons/Instagram.svg" alt="instagram">
+                    </div>
+                </li>
+                <li class="post">
+                    <img src="./img/insta4.jpg" alt="plant">
+                    <div class="inst-wrapper">
+                        <img src="./icons/Instagram.svg" alt="instagram">
+                    </div>
+                </li>
+                <li class="post">
+                    <img src="./img/insta5.jpg" alt="plant">
+                    <div class="inst-wrapper">
+                        <img src="./icons/Instagram.svg" alt="instagram">
+                    </div>
+                </li>
+            </ul>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-wrapper container align">
+            <div class="company">
+                <a href="/" class="name">Plant</a>
+                <p class="article footer-article">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing elit. Diam nibh posuere duis eu non sit integer at placerat amet.
+                </p>
+                <div class="social">
+                    <a href="#" class="social-link"><img src="./icons/Facebook.svg" alt="facebook"></a>
+                    <a href="#" class="social-link"><img src="./icons/Twitter.svg" alt="twitter"></a>
+                    <a href="#" class="social-link"><img src="./icons/Instagram (filled).svg" alt="instagram"></a>
+                </div>
+            </div>
+            <ul class="column">
+                <li class="name name-nav">Navigation</li>
+                <li class="mark"><a href="#">Home</a></li>
+                <li class="mark"><a href="#">About</a></li>
+                <li class="mark"><a href="#">Help & Support</a></li>
+                <li class="mark"><a href="#">Product</a></li>
+            </ul>
+            <ul class="column">
+                <li class="name name-nav">About Us</li>
+                <li class="mark"><a href="#">Contact</a></li>
+                <li class="mark"><a href="#">Address</a></li>
+                <li class="mark"><a href="#">Blog</a></li>
+                <li class="mark"><a href="#">About Us</a></li>
+            </ul>
+            <ul class="column">
+                <li class="name name-nav">Help</li>
+                <li class="mark"><a href="#">Coustomers Services</a></li>
+                <li class="mark"><a href="#">FAQs</a></li>
+                <li class="mark"><a href="#">We Are Hiring</a></li>
+                <li class="mark"><a href="#">Returns</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
